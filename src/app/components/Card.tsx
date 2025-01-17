@@ -21,12 +21,12 @@ const Card = (/* crops */) => {
             <div className="p-4 flex flex-col justify-center gap-4 w-7/12 rounded-r-xl">
                 <div className="flex items-center gap-4 bg-emerald-900 p-3 rounded-2xl">
                     <PiBasket className="text-4xl" />
-                    <h2 className="text-4xl font-bold">Cosecha de Penes</h2>
+                    <h2 className="text-4xl font-bold">Cosecha de tomate</h2>
                 </div>
 
                 <div className="flex items-center gap-4 bg-emerald-900 w-full p-3 rounded-2xl">
                     <PiPlant className="text-4xl" />
-                    <h2 className="text-4xl font-bold">Penemate</h2>
+                    <h2 className="text-4xl font-bold">Tomate</h2>
                 </div>
 
                 <div className="flex items-center gap-4 bg-emerald-900 w-full p-3 rounded-2xl">
