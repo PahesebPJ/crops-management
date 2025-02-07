@@ -3,11 +3,11 @@ import { GoGraph } from 'react-icons/go';
 import Image from 'next/image';
 
 const Card = (/* crops */) => {
-    const resolution = 1000;
+    const resolution = 500;
     const width = resolution;
     const height = resolution;
     return (
-        <div className="rounded-xl shadow-lg bg-emerald-700 flex gap-4 text-white">
+        <div className="rounded-xl shadow-lg bg-emerald-700 flex gap-2 max-w-2xl text-white card-custom">
             <figure className="w-5/12 h-full rounded-l-xl overflow-hidden">
                 <Image
                     src="/img/imagen2.jpg"
@@ -18,20 +18,20 @@ const Card = (/* crops */) => {
                 />
             </figure>
 
-            <div className="p-4 flex flex-col justify-center gap-4 w-7/12 rounded-r-xl">
-                <div className="flex items-center gap-4 bg-emerald-900 p-3 rounded-2xl">
-                    <PiBasket className="text-4xl" />
-                    <h2 className="text-4xl font-bold">Cosecha de tomate</h2>
+            <div className="p-4 flex flex-col justify-center gap-4 w-7/12 rounded-r-xl info-custom__container">
+                <div className="flex items-center gap-4 bg-emerald-900 p-3 rounded-2xl info-custom">
+                    <PiBasket className="text-2xl" />
+                    <h2 className="text-2xl font-bold">Cosecha de tomate</h2>
                 </div>
 
                 <div className="flex items-center gap-4 bg-emerald-900 w-full p-3 rounded-2xl">
-                    <PiPlant className="text-4xl" />
-                    <h2 className="text-4xl font-bold">Tomate</h2>
+                    <PiPlant className="text-2xl" />
+                    <h2 className="text-2xl font-bold">Tomate</h2>
                 </div>
 
                 <div className="flex items-center gap-4 bg-emerald-900 w-full p-3 rounded-2xl">
-                    <GoGraph className="text-4xl" />
-                    <h2 className="text-4xl font-bold">10% - 20%</h2>
+                    <GoGraph className="text-2xl" />
+                    <h2 className="text-2xl font-bold">10% - 20%</h2>
                 </div>
             </div>
         </div>
