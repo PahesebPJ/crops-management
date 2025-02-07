@@ -9,9 +9,6 @@ export default function Home() {
             {/* Card´s container */}
             <section className="card-container p-4">
                 <Card />
-                <Card />
-                <Card />
-                <Card />
             </section>
         </div>
     );
