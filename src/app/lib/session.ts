@@ -23,7 +23,7 @@ export async function createSession(user: User) {
   });
 
   (await cookies()).set("userData", JSON.stringify({ id: user.id, name: user.name, email: user.email}), {
-    httpOnly: true,
+    httpOnly: false,
     secure: true,
     expires: expiresAt,
   });
@@ -31,6 +31,7 @@ export async function createSession(user: User) {
 
 export async function deleteSession() {
   (await cookies()).delete("session");
+  (await cookies()).delete("userData");
 }
 
 type SessionPayload = {

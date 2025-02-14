@@ -1,6 +1,6 @@
 "use server"
 
-import { number, z } from "zod";
+import { z } from "zod";
 import { createSession, deleteSession } from "../lib/session";
 import { redirect } from "next/navigation";
 
@@ -8,7 +8,7 @@ import { redirect } from "next/navigation";
 import { getApiCall } from "../service/api_calls";
 import api_routes from "../service/api_routes";
 
-const URL = process.env.URL_API_PC;
+const URL = process.env.NEXT_PUBLIC_URL_API_PC;
 
 const loginSchema = z.object({
     email: z.string().email({ message: "Invalid email address" }).trim(),
@@ -38,7 +38,7 @@ export async function login(prevState: any, formData: FormData) {
           },
         };
     }
-
+    
     await createSession({ id: data.user.id, name: data.user.name, email: data.user.email });
 
     redirect("/");
