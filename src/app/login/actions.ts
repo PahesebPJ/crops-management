@@ -5,10 +5,10 @@ import { createSession, deleteSession } from "../lib/session";
 import { redirect } from "next/navigation";
 
 //API
-import { getApiCall } from "../service/api_calls";
+import { apiUrl, getApiCall } from "../service/api_calls";
 import api_routes from "../service/api_routes";
 
-const URL = process.env.NEXT_PUBLIC_URL_API_PC;
+const URL = apiUrl;
 
 const loginSchema = z.object({
     email: z.string().email({ message: "Invalid email address" }).trim(),
@@ -37,7 +37,7 @@ export async function login(prevState: any, formData: FormData) {
             email: [data?.message],
           },
         };
-    }
+    } 
     
     await createSession({ id: data.user.id, name: data.user.name, email: data.user.email });
 

@@ -1,12 +1,19 @@
 "use client";
 
+//Styles
 import './css/card-container.css';
+
+//Components
 import Navbar from './components/Navbar';
+import Card from './components/Card';
+
+//Cookies
 import { getCookie } from './lib/utils.client';
-import { getApiCall } from './service/api_calls';
+
+//Libraries
+import { apiUrl, getApiCall } from './service/api_calls';
 import api_routes from './service/api_routes';
 import { useEffect, useState } from 'react';
-import Card from './components/Card';
 import { Crops } from './interface/Crops';
 
 function getUserInfo() {
@@ -21,10 +28,10 @@ function getUserInfo() {
 export default function Home() {
     const [crops, setCrops] = useState<Crops[]>([]);
     const user = getUserInfo();
+    const URL = apiUrl;
 
     async function getCrops() {
-        const apiURL = process.env.NEXT_PUBLIC_URL_API_PC
-        const crops = await getApiCall(`${apiURL}${api_routes.crops}/users/${user.id}`)
+        const crops = await getApiCall(`${URL}${api_routes.crops}/users/${user.id}`)
         console.log(crops);
         setCrops(crops);
     }
@@ -44,7 +51,7 @@ export default function Home() {
                         name={crop.name} 
                         type={crop.type} 
                         watering_frecuence={crop.watering_frecuence} 
-                        src={crop.photo_url}
+                        src={URL + crop.photo_url}
                     />
                 ))
                 }
